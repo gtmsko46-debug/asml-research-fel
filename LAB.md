@@ -10,7 +10,7 @@ Owned by the ASML Grok Bot product/research track on **gtmsko46-debug**.
 
 ## Status
 
-**GO-LIVE** (2026-09-10). FEL-02 dual-KEEP HT-1011 ∧ HT-1022 stamped on card `coherence-if-v1`. Pupil freeze on main (PR #40). P2 productize **APPROVED**; P1 remains bay P0. P2 feed tickets HT-1023 / HT-1024.
+**GO-LIVE** (2026-09-10). FEL-02 dual-KEEP HT-1011 ∧ HT-1022 stamped on card `coherence-if-v1`. FEL-10 dual-KEEP HT-1028 ∧ HT-1033 stamped on `labs/p10-if-shim` (thesis `fel-10-if-ownership`; pin `d0dc1f8a…` EI PR #68). Pupil freeze on main (PR #40). P2 productize **APPROVED**. FEL-03 next when Lab Dir funds + climb freeze lifts.
 
 Harness remains Foreman-gated in asml-bench. This research repo does **not** run lasercode; it captures champion-required learnings only.
 
@@ -22,4 +22,4 @@ Harness remains Foreman-gated in asml-bench. This research repo does **not** run
 
 ## Spine
 
-FEL-02 → FEL-10 IF ownership → FEL-03. No upstairs without Warden + TCO. Never claim Cymer lost.
+FEL-02 done → FEL-10 dual-KEEP done → FEL-03 next (Lab Dir fund + climb freeze lifts). No upstairs without Warden + TCO. Never claim Cymer lost.
