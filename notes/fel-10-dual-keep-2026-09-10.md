@@ -1,55 +1,59 @@
-# FEL-10 dual-KEEP lessons (2026-09-10)
+# FEL-10 dual-KEEP — champion research note
 
-**Audience:** champion / FEL research spine / P10 IF shim / FEL-03 hand-off  
-**Thesis:** `fel-10-if-ownership` — commercial IF ownership **without linac**  
-**Lab:** `labs/p10-if-shim`  
-**Stamp:** HT-1028 ∧ HT-1033 `DUAL_KEEP_STAMPED` (Critic + Repro + Diplomat)  
-**Pin:** HOLDOUT `d0dc1f8a7b8cc97ddd00122fb4156252c7642a09a7f0ae5102b939747c6cc5be` (`d0dc1f8a…`) — EI PR **#68**  
-**Board:** `labs/p10-if-shim/BOARD-dual-KEEP-1028-1033.md`  
-**Not in scope for this dual:** vs-LPP / `lpp-source-v2` (do not bind on this dual)
+**Date:** 2026-09-10  
+**Authority:** FEL Program Director / CoS + PI FEL-10 (Diplomat dual-KEEP stamp)  
+**Board (quote source):** `asml-bench/labs/p10-if-shim/BOARD-dual-KEEP-1028-1033.md`  
+**Bench learnings:** `asml-bench/corpus/learnings/fel-10-dual-keep-lessons-2026-09-10.md`
 
-## Metrics
+## Thesis & lab
 
-| Ticket | Provider tag | Runtime | pupil_err | photons_kept |
-|--------|--------------|---------|-----------|--------------|
-| HT-1028 | `grok` | `xai/grok-4.6` | 0.0895 | 1.0 |
-| HT-1033 | `mock-mistral` | `xai/grok-4.20` stand-in | 0.0950 | 1.0 |
+- **Thesis:** `fel-10-if-ownership` — commercial IF ownership **without linac**.
+- **Lab:** `labs/p10-if-shim` (sandbox `shim.py`; contract `IF_SPEC_FEL10_CONTRACT.md`).
+- **Not in scope for this KEEP:** vs-LPP / `lpp-source-v2` comparative claim. Do **not** bind `lpp-source-v2` on this dual.
+
+## Dual-KEEP STAMPED
+
+| Island | Ticket | Provider tag | Runtime | pupil_err | photons_kept |
+|--------|--------|--------------|---------|-----------|--------------|
+| Grok-lane | HT-1028 | `grok` | `xai/grok-4.6` | 0.0895 | 1.0 |
+| Second-engine | HT-1033 | `mock-mistral` | `xai/grok-4.20` stand-in | 0.0950 | 1.0 |
+
+**Pin:** HOLDOUT `d0dc1f8a7b8cc97ddd00122fb4156252c7642a09a7f0ae5102b939747c6cc5be` (`d0dc1f8a…`) — EI PR **#68**.
 
 Gates cleared: Critic formal PASS (both), Repro PASS (both), Diplomat dual-KEEP stamp. Formal **KEEP** both.
 
-Champion language: **second-engine / mistral-lane** (ticket tag stays `mock-mistral`). Dual-gate models: **grok-4.6 vs grok-4.20 stand-in**.
+Champion language: **second-engine / mistral-lane**. Ticket/results tag stays `mock-mistral`; dual-gate models **grok-4.6 vs grok-4.20 stand-in**. Never trash Mistral or tin-LPP.
 
-## What won
+## Soft travels (disclose)
 
-1. **IF Spec contract discipline:** pupil_fill_error KEEP ≤ 0.10; `photons_kept == 1.0` hard on docket; holdout hash match to SoT `d0dc1f8a…`.
-2. **Dual-gate on identical frozen eval:** Grok-lane + second-engine lane; single-lane KEEP rejected until Diplomat stamps both.
-3. **Honest structure over residual knobs:** reconstruct / correct fill → `pupil_err = |fill − 0.72|`; no hardcode-0; no `pupil_in−k` / `PUPIL_CORRECT` write-downs.
-4. **Card hygiene:** commercial IF ownership without linac on `p10-if-shim`; consumes coherence IF read-only; **no** `lpp-source-v2` on this dual.
+- **HT-1033 no-gain path** travels with the dual stamp — disclose on board / tickets / champion notes.
+- Not a VOID; not a reopen of dual-KEEP. Promote/ship separate from FREEZE closeout.
 
-## Soft travels (disclose — do not VOID)
+## Critic VOID history (not dual partners)
 
-- **HT-1033:** no-gain path travels with the dual stamp. Disclose on board / tickets / champion notes; not a reopen of dual-KEEP. Promote/ship separate.
+| Ticket | Pattern | Disposition |
+|--------|---------|-------------|
+| HT-1029 | Hardcode `pupil_err=0` | VOID — successor chain → HT-1033 |
+| HT-1032 | `pupil_in−k` / `PUPIL_CORRECT` write-downs | VOID — successor **HT-1033** |
 
-## Critic VOID / RESET history (do not revive)
+## Standing bans
 
-| Ticket | Kill |
-|--------|------|
-| HT-1029 | Hardcode `pupil_err=0` (structure cheat) → VOID; successor climb via HT-1032 → HT-1033 |
-| HT-1032 | `pupil_in−k` / `PUPIL_CORRECT` residual write-downs → VOID; successor **HT-1033** |
+- `pupil_in−k` family (incl. `PUPIL_CORRECT` offsets)
+- Constant / hardcode `pupil_err` (esp. `=0`)
+- Write-down `abs(delta)*k` / `p_err*scale` gatesitting (see also [`critic-lessons-write-down-and-clones.md`](critic-lessons-write-down-and-clones.md))
 
-## Standing bans (FEL-10 / lab-wide)
+## Spine & upstairs discipline
 
-- **`pupil_in−k` family** (including `PUPIL_CORRECT` offsets) — residual write-down, not reconstruct/correct
-- **Constant / hardcode `pupil_err`** (esp. `pupil_err=0`)
-- **Write-down `abs(delta)*k`** / `p_err*scale` gatesitting (carried from FEL-02 critic lessons)
+- Spine: **FEL-02 done → FEL-10 dual-KEEP done → FEL-03 next** when Lab Director funds **and** climb freeze lifts.
+- FREEZE closeout on this dual; promote/ship annotated separately.
+- No upstairs brief without **Warden + TCO**.
+- Never claim Cymer lost.
 
-## Spine & hand-offs
+## Board excerpt
 
-- **Spine:** FEL-02 done → **FEL-10 dual-KEEP done** → **FEL-03 next** when Lab Director funds **and** climb freeze lifts
-- **FREEZE closeout** on this dual; promote/ship annotated separately
-- No upstairs brief without Warden + TCO; never claim Cymer lost
+> stamped: 2026-09-10 · pin: HOLDOUT d0dc1f8a… (EI PR #68) · HT-1028 pupil=0.0895 photons=1.0 ∧ HT-1033 pupil=0.0950 photons=1.0 · Critic+Repro+Diplomat · soft travels: no-gain path on HT-1033 (disclose) · not: vs-LPP / lpp-source-v2; no upstairs; promote/ship separate · spine next: FEL-03 after Lab Dir fund + climb freeze lifts
 
-## Board (verbatim)
+## Board (verbatim from asml-bench)
 
 ```
 # FEL-10 Dual KEEP — HT-1028 ∧ HT-1033
@@ -62,13 +66,3 @@ Champion language: **second-engine / mistral-lane** (ticket tag stays `mock-mist
 - **not:** vs-LPP / lpp-source-v2; no upstairs; promote/ship separate
 - **spine next:** FEL-03 after Lab Dir fund + climb freeze lifts
 ```
-
-## Cross-links
-
-- Stamp digest: `corpus/learnings/dual-keep-1028-1033-2026-09-10.md`
-- Research pack: `asml-research-fel/notes/fel-10-dual-keep-2026-09-10.md`
-- Prior spine: `corpus/learnings/fel-02-dual-keep-lessons-2026-09-10.md`
-
-## Mirror
-
-Canonical bench copy: `asml-bench/corpus/learnings/fel-10-dual-keep-lessons-2026-09-10.md`
