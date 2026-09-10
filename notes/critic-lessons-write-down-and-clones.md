@@ -41,3 +41,26 @@ Dual-KEEP partners remain **HT-1011 ∧ HT-1022** only.
 ## Champion language
 
 Second-engine lane (ticket tag `mock-mistral`) is a real dual-gate island — not mock theater. Critic VOIDs are process hygiene, not a knock on either engine.
+
+---
+
+# FEL-10 addendum (2026-09-10)
+
+**Scope:** `fel-10-if-ownership` / `labs/p10-if-shim`. Dual-KEEP partners: **HT-1028 ∧ HT-1033** only.
+
+## Additional VOID rules
+
+6. **Hardcode `pupil_err=0` (or any constant pupil_err) = VOID.**  
+   HT-1029 died here. Pupil error must be computed as `|fill − 0.72|` after reconstruct/correct.
+
+7. **Ban `pupil_in−k` / `PUPIL_CORRECT` residual family.**  
+   Offsetting raw pupil_in by a constant to clear the gate is gatesitting — same class as `abs(delta)*k`. HT-1032 VOID (all r2/r3).
+
+## What VOID tickets were (FEL-10)
+
+| Ticket | Pattern | Disposition |
+|--------|---------|-------------|
+| HT-1029 | Hardcode `pupil_err=0` | VOID — not a dual partner |
+| HT-1032 | `pupil_in−k` / `PUPIL_CORRECT` write-downs | VOID — successor HT-1033 |
+
+Soft (not VOID): HT-1033 **no-gain** path travels with dual stamp — disclose only.
